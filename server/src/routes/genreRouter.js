@@ -3,8 +3,7 @@ const genreRouter = require('express').Router()
 
 genreRouter.get('/', async(req, res) => {
     try {
-        await getGenres()
-        res.status(200).json({ message: "Se creó exitosamente" })
+        res.status(200).json(await getGenres())
     } catch (error) {
         res.status(400).json({ error: error.message })
     }

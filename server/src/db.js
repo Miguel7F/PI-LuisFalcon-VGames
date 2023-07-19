@@ -14,8 +14,8 @@ genresModel(database);
 const { Videogame, Genre } = database.models
 
 
-Videogame.belongsToMany(Genre, { through: 'genreXgame' });
-Genre.belongsToMany(Videogame, { through: 'genreXgame' });
+Videogame.belongsToMany(Genre, { through: 'genreXgame', timestamps: false });
+Genre.belongsToMany(Videogame, { through: 'genreXgame', timestamps: false });
 
 module.exports = {
     database,
