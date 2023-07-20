@@ -8,7 +8,15 @@ module.exports = (database) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
+            unique: true,
+            validate: {
+                notNull: {
+                    msg: "No se permiten valores nulos"
+                },
+                notEmpty: {
+                    msg: "No se permiten cadenas vacías"
+                }
+            }
         }
     }, {
         timestamps: false

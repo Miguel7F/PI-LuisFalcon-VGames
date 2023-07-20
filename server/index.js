@@ -4,6 +4,7 @@ const server = require('./src/server')
 const { database } = require('./src/db')
 const saveGenre = require('./src/controller/saveGenre')
 
+
 database.sync({ force: true }).then(() => {
     server.listen(PORT, () => {
         saveGenre()

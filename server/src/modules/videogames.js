@@ -9,30 +9,65 @@ module.exports = (database) => {
         },
         name: {
             type: DataTypes.STRING,
+            unique: true,
             allowNull: false,
-            unique:true
+            validate: {
+                notNull: {
+                    msg: "No se permiten valores nulos"
+                },
+                notEmpty: {
+                    msg: "No se permiten cadenas vacías"
+                }
+            }
         },
         description: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: "No se permiten valores nulos"
+                },
+                notEmpty: {
+                    msg: "No se permiten cadenas vacías"
+                }
+            }
         },
         platforms: {
             type: DataTypes.ARRAY(DataTypes.JSON),
-            allowNull: false
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: "No se permiten valores nulos"
+                }
+            }
         },
         background_image: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isUrl: true,
-            }
+                isUrl: {
+                    args: true,
+                    msg: 'El formato de URL ingresado no es válido',
+                },
+            },
         },
         released: {
             type: DataTypes.DATEONLY,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: "No se permiten valores nulos"
+                }
+            }
         },
         rating: {
             type: DataTypes.DECIMAL(3, 2),
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: "No se permiten valores nulos"
+                }
+            }
         },
     },
         {
