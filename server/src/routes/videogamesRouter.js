@@ -1,11 +1,11 @@
 const videogamesRouter = require('express').Router()
-const getAllGames=require('../controller/getAllGames')
-const getOneGame=require('../controller/getOneGame')
-const getGameXName=require('../controller/getGameXName')
-const createGame=require('../controller/createGame')
+const getAllGames = require('../controller/getAllGames')
+const getOneGame = require('../controller/getOneGame')
+const getGameXName = require('../controller/getGameXName')
+const createGame = require('../controller/createGame')
 
-videogamesRouter.get('/page/:page', async(req, res) => {
-    const {page}=req.params
+videogamesRouter.get('/page/:page', async (req, res) => {
+    const { page } = req.params
     try {
         res.status(200).json(await getAllGames(page))
     } catch (error) {
@@ -13,8 +13,8 @@ videogamesRouter.get('/page/:page', async(req, res) => {
     }
 })
 
-videogamesRouter.get('/game/:idGame', async(req, res) => {
-    const {idGame}=req.params
+videogamesRouter.get('/game/:idGame', async (req, res) => {
+    const { idGame } = req.params
     try {
         res.status(200).json(await getOneGame(idGame))
     } catch (error) {
@@ -22,8 +22,8 @@ videogamesRouter.get('/game/:idGame', async(req, res) => {
     }
 })
 
-videogamesRouter.get('/name', async(req, res) => {
-    const {name}=req.query
+videogamesRouter.get('/name', async (req, res) => {
+    const { name } = req.query
     try {
         res.status(200).json(await getGameXName(name))
     } catch (error) {
@@ -31,12 +31,12 @@ videogamesRouter.get('/name', async(req, res) => {
     }
 })
 
-videogamesRouter.post('/', async(req, res) => {
-    const {game}=req.body
+videogamesRouter.post('/', async (req, res) => {
+    const { game } = req.body
     try {
         res.status(200).json(await createGame(game))
     } catch (error) {
-        res.status(400).json({ error: error.message })
+        res.status(400).json({ message: error.message })
     }
 })
 
