@@ -2,7 +2,7 @@ require('dotenv').config()
 const { URL_API, API_KEY } = process.env
 const axios = require('axios')
 
-function getGameXName(name) {
+function getGameNameService(name) {
     // console.log(isNaN(idGame));
     // if(isNaN(idGame)){
     //     return {idGame:"Es un número"}
@@ -18,4 +18,4 @@ function getGameXName(name) {
         })
 }
 
-module.exports=getGameXName;
+module.exports = getGameNameService;

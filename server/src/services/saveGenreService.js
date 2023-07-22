@@ -1,7 +1,7 @@
 require('dotenv').config()
 const { URL_API, API_KEY } = process.env
 const axios = require('axios')
-const { Genre } = require('../db')
+const { Genre } = require('../config/db')
 
 function saveGenre() {
     axios.get(`${URL_API}genres?key=${API_KEY}`)

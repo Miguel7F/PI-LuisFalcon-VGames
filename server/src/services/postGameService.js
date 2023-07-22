@@ -1,6 +1,6 @@
-const { Videogame } = require('../db')
+const { Videogame } = require('../config/db')
 
-async function createGame({ name, description, platforms, background_image, released, rating, GenreId }) {
+async function postGameService({ name, description, platforms, background_image, released, rating, GenreId }) {
 
     if (!GenreId) throw Error("El campo GÉNERO no puede ser nulo")
 
@@ -14,4 +14,4 @@ async function createGame({ name, description, platforms, background_image, rele
     }
 }
 
-module.exports = createGame;
+module.exports = postGameService;

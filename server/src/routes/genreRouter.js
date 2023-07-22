@@ -1,12 +1,7 @@
-const getGenres = require('../controller/getGenres')
 const genreRouter = require('express').Router()
+const getGenreController = require('../controllers/getGenreController')
 
-genreRouter.get('/', async(req, res) => {
-    try {
-        res.status(200).json(await getGenres())
-    } catch (error) {
-        res.status(400).json({ error: error.message })
-    }
-})
+genreRouter.get('/', getGenreController)
 
-module.exports = genreRouter
+module.exports = genreRouter;
+

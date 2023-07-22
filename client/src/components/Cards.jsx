@@ -2,7 +2,7 @@ import Card from './Card'
 
 function Cards() {
     return (
-        <div>
+        <div>Cards:
             <Card></Card>
         </div>
     )

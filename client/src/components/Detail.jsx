@@ -1,7 +1,10 @@
+import styles from '../styles/detail.module.css'
 
 function Detail() {
   return (
-    <div>Detail</div>
+    <div>
+      detail
+    </div>
   )
 }
 
