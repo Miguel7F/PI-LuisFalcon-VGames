@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    text-decoration:none;
+    color: white;
+    font-weight: bold;
+}
+.container.active{
+    color: white;
+}
+.container.visited{
+    color: white;
+}
+
+.imagen {
+    max-width: 250px;
+    max-height: 125px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+}
+
+.container span {
+    width: 100%;
+    flex: 1;
+}

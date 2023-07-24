@@ -1,11 +1,27 @@
-import styles from '../styles/detail.module.css'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import getGameDetail from '../redux/actions/getGameDetailAction';
+import DetailCard from './DetailCard';
 
 function Detail() {
+  const id = useParams().id
+  const [detail, setDetail] = useState({
+
+  })
+
+  useEffect(() => {
+    async function getDetail(id) {
+      setDetail(await getGameDetail(id))
+    }
+    try {
+      getDetail(id)
+    } catch (error) {
+      alert(error.message)
+    }
+  }, [])
+
   return (
-    <div>
-      detail
-    </div>
+    <DetailCard id={detail.id} name={detail.name} background_image={detail.background_image} platformsName={detail.platformsName} description={detail.description} released={detail.released} rating={detail.rating} genresName={detail.genresName} />
   )
 }
-
 export default Detail
