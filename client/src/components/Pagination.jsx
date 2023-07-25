@@ -1,16 +1,15 @@
-import styles from '../styles/pagination.module.css';
+import styles from '../styles/pagination.module.css'
+import React from 'react'
 
-
-function Pagination({ totalPages, onClickPage }) {
-    const arr = [1] * totalPages
+function Pagination({ arrPages, actualPage, totalPages, handleClick }) {
     return (
         <section className={styles.container}>
-            <div onClick={() => onClickPage()}>🔙</div>
-            {arr.forEach(element => {
-                console.log("hola");
-            })}
-            <div onClick={() => onClickPage()}>🔜</div>
-        </section>
+            <button key='back' id='back' disabled={actualPage === 1} onClick={() => handleClick('back')}>Back</button>
+            {arrPages?.map((page) => (
+                <button key={`page${page}`} onClick={() => handleClick(page)} className={page === actualPage ? styles.currentPage : null}> {page} </button>
+            ))}
+            <button key='next' id='next' disabled={actualPage === totalPages} onClick={() => handleClick('next')}> Next</button >
+        </section >
     )
 }
 

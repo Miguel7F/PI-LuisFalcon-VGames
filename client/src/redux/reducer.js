@@ -1,21 +1,34 @@
-import { GAME_PAGINATION, GET_GAMES, GET_GENRES, PAGE_SIZE } from "./actions/constants";
+import { GET_GAMES, GET_GENRES, CHANGE_BAR } from "../constants/constants";
+import filterSortGames from "../services/filterSortGames";
 
 const initialState = {
     genres: [],
     games: [],
-    pagination: []
+    modificated: [],
+    genre: "All",
+    direction: "down",
+    type: "rating",
+    source: "All",
+    nameGame: ""
 }
 
 function rootReducer(state = initialState, { type, payload }) {
-    function gameXpage(games, start, end) { return games.slice(start, end) }
 
     switch (type) {
         case GET_GENRES:
             return { ...state, genres: payload }
         case GET_GAMES:
-            return { ...state, games: payload, pagination: gameXpage(payload, 0, PAGE_SIZE) }
-        case GAME_PAGINATION:
-            return { ...state, pagination: gameXpage(games, PAGE_SIZE * (payload - 1), PAGE_SIZE * payload) }
+            return {
+                ...state,
+                games: payload,
+                modificated: filterSortGames({ ...state, games: payload })
+            }
+        case CHANGE_BAR:
+            return {
+                ...state,
+                modificated: filterSortGames({ ...state, [payload.name]: payload.value }),
+                [payload.name]: payload.value
+            }
         default:
             return { ...state }
     }

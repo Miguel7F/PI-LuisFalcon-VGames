@@ -8,7 +8,7 @@ function getPages(page) {
         .then(({ data }) => {
             const reducer = data.results?.map(({ id, name, background_image, rating, genres }) => {
                 const genreName = genres?.map(gen => gen.name)
-                return { id, name, background_image, rating, genreName }
+                return { source:'API RAWG', id, name, background_image, rating, genreName }
             })
             return reducer;
         })

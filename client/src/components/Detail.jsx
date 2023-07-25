@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import getGameDetail from '../redux/actions/getGameDetailAction';
+import getGameDetail from '../services/getGameDetail';
 import DetailCard from './DetailCard';
+
 
 function Detail() {
   const id = useParams().id

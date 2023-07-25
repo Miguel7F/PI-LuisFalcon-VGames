@@ -1,4 +1,4 @@
-import { API } from "./constants";
+import { API } from "../constants/constants";
 import axios from 'axios'
 
 async function getGameDetail(id) {

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { API, GET_GENRES } from './constants'
+import { API, GET_GENRES } from '../../constants/constants'
 
 
 function getGenres() {
@@ -10,7 +10,7 @@ function getGenres() {
                 payload: data
             }))
             .catch((error) => {
-                alert(error.message)
+                throw Error (error.message)
             })
     }
 }

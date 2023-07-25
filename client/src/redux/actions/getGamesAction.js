@@ -1,9 +1,14 @@
 import axios from 'axios'
-import { API, GET_GAMES } from './constants'
-
+import { API, GET_GAMES } from '../../constants/constants'
+import data from '../../constants/hundredGames'
 
 function getGames() {
-    return function (dispatch) {
+    return {
+        type: GET_GAMES,
+        payload: data
+    }
+
+    /*return function (dispatch) {
         axios.get(`${API}videogames/page`)
             .then(({ data }) => dispatch({
                 type: GET_GAMES,
@@ -11,9 +16,9 @@ function getGames() {
             }))
             .catch((error) => {
                 console.log(error);
-                alert(error.message)
+                throw Error (error.message)
             })
-    }
+    }*/
 }
 
 export default getGames;
