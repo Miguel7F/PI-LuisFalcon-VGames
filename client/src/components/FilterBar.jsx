@@ -1,6 +1,7 @@
 import changeBar from '../redux/actions/changeBar'
 import styles from '../styles/filterBar.module.css'
 import { useDispatch, useSelector } from 'react-redux'
+import GenreOption from './GenreOption'
 
 function FilterBar() {
     const dispatch = useDispatch()
@@ -29,9 +30,7 @@ function FilterBar() {
 
             <select name="genre" onChange={handleChange} value={genre} >
                 <option value="All">All</option>
-                {genres && genres.map(({ name }) => (
-                    <option key={name} value={name}>{name}</option>
-                ))}
+                <GenreOption genres={genres}/>
             </select>
         </section>
     )

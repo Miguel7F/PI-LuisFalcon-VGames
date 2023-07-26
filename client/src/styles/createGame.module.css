@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+}
+
+.getData {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    flex: 1;
+}
+.getData input{
+    width: 300px;
+    margin:15px 0px 15px 0px;
+}
+
+.viewData {
+    display: flex;
+    flex-flow: wrap column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.viewData img{
+    width: 500px;
+    height: 300px;
+}
