@@ -9,6 +9,7 @@ import SortBar from './SortBar';
 import FilterBar from './FilterBar';
 
 function Home() {
+  console.log('ingresa a home');
   const dispatch = useDispatch()
   const genres = useSelector(state => state.genres)
   const games = useSelector(state => state.games)

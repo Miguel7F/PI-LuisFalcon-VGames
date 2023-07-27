@@ -1,9 +1,11 @@
 import { GET_GAMES, GET_GENRES, CHANGE_BAR } from "../constants/constants";
 import filterSortGames from "../services/filterSortGames";
+import getPlatforms from "../services/getPlatforms";
 
 const initialState = {
     genres: [],
     games: [],
+    platforms: [],
     modificated: [],
     genre: "All",
     direction: "down",
@@ -21,13 +23,14 @@ function rootReducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 games: payload,
-                modificated: filterSortGames({ ...state, games: payload })
+                modificated: filterSortGames({ ...state, games: payload }),
+                platforms: getPlatforms(payload)
             }
         case CHANGE_BAR:
             return {
                 ...state,
-                modificated: filterSortGames({ ...state, [payload.name]: payload.value }),
-                [payload.name]: payload.value
+                [payload.name]: payload.value,
+                modificated: filterSortGames({ ...state, [payload.name]: payload.value })
             }
         default:
             return { ...state }

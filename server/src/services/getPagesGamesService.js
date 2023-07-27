@@ -6,9 +6,9 @@ const axios = require('axios')
 function getPages(page) {
     return axios.get(`${URL_API}games?key=${API_KEY}&page=${page}&page_size=40`)
         .then(({ data }) => {
-            const reducer = data.results?.map(({ id, name, background_image, rating, genres }) => {
-                const genreName = genres?.map(gen => gen.name)
-                return { source:'API RAWG', id, name, background_image, rating, genreName }
+            const reducer = data.results?.map(({ id, name, background_image, rating, genres, platforms }) => {
+                const genresName = genres?.map(gen => gen.name)
+                return { source: 'API RAWG', id, name, background_image, rating, genresName, platforms }
             })
             return reducer;
         })

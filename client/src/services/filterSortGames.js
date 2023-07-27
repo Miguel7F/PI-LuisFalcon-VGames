@@ -10,7 +10,7 @@ function filterSortGames(state) {
     const filterByName = filterBySource.filter(({ name }) => name.toLowerCase().includes(nameFormated))
 
     //Filtrando por género: (19 géneros)
-    const filterByGenre = genre === 'All' ? filterByName : filterByName.filter(({ genreName }) => genreName.includes(genre))
+    const filterByGenre = genre === 'All' ? filterByName : filterByName.filter(({ genresName }) => genresName.includes(genre))
 
     //Ordenando direction (up -down) y por tipo (Rating o Name)
     const sortByType = filterByGenre.sort((a, b) => {

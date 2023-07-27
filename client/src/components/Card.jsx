@@ -1,7 +1,7 @@
 import styles from '../styles/card.module.css'
 import { NavLink } from 'react-router-dom'
 
-function Card({ id, background_image, name, genreName, rating }) {
+function Card({ id, background_image, name, genresName, rating }) {
   return (
     <section>
       <NavLink to={`/detail/${id}`} className={styles.container}>
@@ -10,7 +10,7 @@ function Card({ id, background_image, name, genreName, rating }) {
           <img src={background_image} alt={name} />
         </div>
         <div>{rating}⭐</div>
-        <div>{genreName}</div>
+        <div>{genresName}</div>
       </NavLink>
     </section>
   )
