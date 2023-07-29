@@ -30,7 +30,6 @@ function Pages() {
         setCurrentPage(1)
     }, [modificated])
 
-
     return (
         <section>
             <Pagination arrPages={arrPages} currentPage={currentPage} totalPages={totalPages} handleClick={handleClick} />

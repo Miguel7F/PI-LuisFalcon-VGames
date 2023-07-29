@@ -13,7 +13,7 @@ function CreateGameForm() {
   const games = useSelector(state => state.games)
   const platforms = useSelector(state => state.platforms)
   const arrRatings = [{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }, { name: 5 }]
-
+console.log(games[0]);
   const [info, setInfo] = useState({
     nameGame: '',
     image: '',
@@ -30,7 +30,11 @@ function CreateGameForm() {
     description: '',
     released: '',
     rating: '',
+    platform: '',
+    genre: '',
   })
+
+  const disabledSubmit = Object.values(error).every(value => value === 'ok')
 
   const filterPlatforms = platforms.filter(({ name }) => {
     return !info.platform.some(el => el === name)
@@ -58,21 +62,43 @@ function CreateGameForm() {
 
   function handleSelectChange(event) {
     const { name, value } = event.target
+    setError({ ...error, [name]: 'ok' })
+
     if (name === "rating") setInfo({ ...info, [name]: value })
-    else {
-      setInfo({ ...info, [name]: [...info[name], value] })
-    }
+    else setInfo({ ...info, [name]: [...info[name], value] })
   }
 
   function handleClick(event) {
     event.preventDefault()
     const { name, value } = event.target
+    if (info[name].length <= 1) setError({ ...error, [name]: 'You must select an option' })
     setInfo({ ...info, [name]: [...info[name].filter(elem => elem !== value)] })
+  }
+
+  function handleBlur(event) {
+    const { name } = event.target
+    if (info[name].length === 0) setError({ ...error, [name]: 'You must select an option' })
+    else setError({ ...error, [name]: 'ok' })
+  }
+  function handleSubmit(event) {
+    event.preventDefault()
+
+    const createGame = {
+      game: {
+        name: info.nameGame,
+        description: info.description,
+        platforms: [],
+        background_image: info.image,
+        released: info.released,
+        rating: info.rating,
+        GenreId: []
+      }
+    }
   }
 
   return (
     <div className={styles.container}>
-      <form className={styles.getData}>
+      <form className={styles.getData} onSubmit={handleSubmit}>
         <h2>Video Game Information</h2>
         <small>Fields marked with "<strong>*</strong>" are required</small>
         <label> <input type='text' key='nameGame' name='nameGame'
@@ -92,26 +118,29 @@ function CreateGameForm() {
         <small>{error.released}</small>
 
         <label>
-          <select name="rating" onChange={handleSelectChange} defaultValue={'select'} >
+          <select name="rating" onChange={handleSelectChange} defaultValue={'select'} onBlur={handleBlur}>
             <option value="select" disabled>Give a score</option>
             <AllOption options={arrRatings} />
           </select>  *</label>
+        <small>{error.rating}</small>
 
         <label>
-          <select name="platform" onChange={handleSelectChange} value={'select'} disabled={info.platform.length >= 5}>
+          <select name="platform" onChange={handleSelectChange} value={'select'} onBlur={handleBlur} disabled={info.platform.length >= 5} >
             <option value="select" disabled>Select up to 5 platforms</option>
             <AllOption options={filterPlatforms} />
           </select>  *</label>
         <ShowSelected name='platform' values={info.platform} handleClick={handleClick} />
+        <small>{error.platform}</small>
 
         <label>
-          <select name="genre" onChange={handleSelectChange} value={'select'} disabled={info.genre.length >= 5}>
+          <select name="genre" onChange={handleSelectChange} value={'select'} onBlur={handleBlur} disabled={info.genre.length >= 5} >
             <option value="select" disabled>Select up to 5 genres</option>
             <AllOption options={filterGenres} />
           </select>  *</label>
         <ShowSelected name='genre' values={info.genre} handleClick={handleClick} />
+        <small>{error.genre}</small>
 
-        <button type='submit' disabled={!error.completed}>Send video game info</button>
+        <button type='submit' disabled={!disabledSubmit}>Send video game info</button>
       </form>
       <section className={styles.viewData}>
         <h2>Video Game Card</h2>
