@@ -7,7 +7,7 @@ function Card({ id, background_image, name, genresName, rating }) {
       <NavLink to={`/detail/${id}`} className={styles.container}>
         <div>{name}</div>
         <div className={styles.imagen}>
-          <img src={background_image} alt={name} />
+          <img src={background_image} alt={name} loading="lazy"/>
         </div>
         <div>{rating}⭐</div>
         <div>{genresName}</div>

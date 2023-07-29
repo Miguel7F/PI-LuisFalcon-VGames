@@ -1,4 +1,4 @@
-function AllOption({options}) {
+function AllOption({ options }) {
     return (
         <>
             {options && options.map(({ name }) => (

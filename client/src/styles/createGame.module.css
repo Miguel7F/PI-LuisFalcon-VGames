@@ -13,8 +13,7 @@
     flex: 1;
 }
 
-.getData input,
-select {
+.getData input, select {
     width: 300px;
     margin: 10px 0px 10px 0px;
     border-color: blueviolet;

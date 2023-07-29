@@ -9,32 +9,33 @@ function Pages() {
     const totalPages = Math.ceil(modificated.length / PAGE_SIZE)
     const arrPages = Array.from({ length: totalPages }, (_, i) => i + 1)
 
-    const [actualPage, setActualPage] = useState(1)
-    const showGames = modificated.slice((actualPage - 1) * PAGE_SIZE, actualPage * PAGE_SIZE)
+    const [currentPage, setCurrentPage] = useState(1)
+    const showGames = modificated.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
 
     function handleClick(page) {
+        window.scrollTo({ top: 0, behavior: 'auto' });
         switch (page) {
             case 'back':
-                setActualPage(actualPage - 1)
+                setCurrentPage(currentPage - 1)
                 break;
             case 'next':
-                setActualPage(actualPage + 1)
+                setCurrentPage(currentPage + 1)
                 break;
             default:
-                setActualPage(page)
+                setCurrentPage(page)
                 break;
         }
     }
     useEffect(() => {
-        setActualPage(1)
+        setCurrentPage(1)
     }, [modificated])
 
 
     return (
         <section>
-            <Pagination arrPages={arrPages} actualPage={actualPage} totalPages={totalPages} handleClick={handleClick} />
+            <Pagination arrPages={arrPages} currentPage={currentPage} totalPages={totalPages} handleClick={handleClick} />
             <Cards showGames={showGames} />
-            <Pagination arrPages={arrPages} actualPage={actualPage} totalPages={totalPages} handleClick={handleClick} />
+            <Pagination arrPages={arrPages} currentPage={currentPage} totalPages={totalPages} handleClick={handleClick} />
         </section>
     )
 }
