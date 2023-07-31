@@ -13,7 +13,6 @@ function CreateGameForm() {
   const games = useSelector(state => state.games)
   const platforms = useSelector(state => state.platforms)
   const arrRatings = [{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }, { name: 5 }]
-console.log(games[0]);
   const [info, setInfo] = useState({
     nameGame: '',
     image: '',

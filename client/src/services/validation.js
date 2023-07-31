@@ -1,4 +1,4 @@
-const regexName = /^[a-zA-Z0-9_:'()\-]{2,60}$/;
+const regexName = /^[a-zA-Z0-9_:'()\-\s]{2,60}$/;
 const regexUrl = /^(https?):\/\/[^\s/$.?#].[^\s]*$/;
 const regexDate = /^(198\d|199\d|200\d|201\d|202[0-3])-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\d|3[01])$/;
 //{ nameGame, image, description, plataforms, released, rating, genre }
