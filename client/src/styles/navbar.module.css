@@ -1,15 +1,48 @@
-
 .container {
     width: 100%;
     display: flex;
-    flex-flow: wrap row ;
+    flex-flow: wrap row;
     align-items: center;
-    justify-content: space-around; 
-    background-color: violet;
+    justify-content: space-around;
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    opacity: 0.9;
+    z-index: 1;
 }
 
 .link {
+    padding: 4px 8px 4px 8px;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 12px;
+    margin: 10px;
+    color: #fff6fb;
+    text-shadow: -2px 2px 5px #FD3084;
+    background-color: transparent;
+    border: 2px solid #FEB1DE;
+    box-shadow: 0 0 0px 1px #F11271,
+        0 0 10px 2px #FD3084,
+        inset 0 0 0px 1px #F11271,
+        inset 0 0 10px 2px #FD3084;
+    transition: 100ms;
     text-decoration: none;
-    font-size: 1.2rem;
-    min-width: 200px;
+}
+
+.link:hover {
+    box-shadow: 0 0 0px 1px #F11271,
+        0 0 10px 2px #FD3084,
+        inset 0 0 0px 1px #F11271,
+        inset 0 0 30px 2px #FD3084;
+    text-shadow: 0 0 10px #FD3084;
+    transform: translateY(-5px);
+}
+
+.link:active {
+    box-shadow: 0 0 0px 1px #F11271,
+        0 0 25px 2px #FD3084,
+        inset 0 0 0px 1px #F11271,
+        inset 0 0 30px 2px #FD3084;
+    transform: translateY(1px);
 }

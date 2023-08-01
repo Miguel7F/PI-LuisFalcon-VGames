@@ -1,6 +1,6 @@
-import { GET_GAMES, GET_GENRES, CHANGE_BAR } from "../constants/constants";
+import { GET_GAMES, GET_GENRES, CHANGE_BAR, UPDATE_GAMES } from "../constants/constants";
 import filterSortGames from "../services/filterSortGames";
-import getPlatforms from "../services/getPlatforms";
+//import getPlatforms from "../services/getPlatforms";
 
 const initialState = {
     genres: [],
@@ -22,15 +22,21 @@ function rootReducer(state = initialState, { type, payload }) {
         case GET_GAMES:
             return {
                 ...state,
-                games: payload,
-                modificated: filterSortGames({ ...state, games: payload }),
-                platforms: getPlatforms(payload)
+                games: payload.games,
+                modificated: filterSortGames({ ...state, games: payload.games }),
+                platforms: payload.platforms
             }
         case CHANGE_BAR:
             return {
                 ...state,
                 [payload.name]: payload.value,
                 modificated: filterSortGames({ ...state, [payload.name]: payload.value })
+            }
+        case UPDATE_GAMES:
+            return {
+                ...state,
+                games: [...state.games, payload],
+                modificated: filterSortGames({ ...state, games: [...state.games, payload] }),
             }
         default:
             return { ...state }

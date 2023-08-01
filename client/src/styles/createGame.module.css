@@ -13,13 +13,7 @@
     flex: 1;
 }
 
-.getData input, select {
-    width: 300px;
-    margin: 10px 0px 10px 0px;
-    border-color: blueviolet;
-    border-width: 2px;
-    padding: 2px;
-}
+
 
 .getData label, strong {
     color: red;

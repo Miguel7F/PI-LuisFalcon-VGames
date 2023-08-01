@@ -32,15 +32,15 @@ module.exports = (database) => {
                 }
             }
         },
-        platforms: {
-            type: DataTypes.ARRAY(DataTypes.JSON),
-            allowNull: false,
-            validate: {
-                notNull: {
-                    msg: "No se permiten valores nulos"
-                }
-            }
-        },
+        // platforms: {
+        //     type: DataTypes.ARRAY(DataTypes.JSON),
+        //     allowNull: false,
+        //     validate: {
+        //         notNull: {
+        //             msg: "No se permiten valores nulos"
+        //         }
+        //     }
+        // },
         background_image: {
             type: DataTypes.STRING,
             allowNull: false,

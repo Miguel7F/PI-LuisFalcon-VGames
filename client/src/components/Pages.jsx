@@ -3,6 +3,7 @@ import { PAGE_SIZE } from '../constants/constants';
 import { useEffect, useState } from 'react';
 import Pagination from './Pagination';
 import Cards from './Cards';
+import WithoutCards from './WithoutCards';
 
 function Pages() {
     const modificated = useSelector(state => state.modificated)
@@ -30,13 +31,19 @@ function Pages() {
         setCurrentPage(1)
     }, [modificated])
 
-    return (
-        <section>
-            <Pagination arrPages={arrPages} currentPage={currentPage} totalPages={totalPages} handleClick={handleClick} />
-            <Cards showGames={showGames} />
-            <Pagination arrPages={arrPages} currentPage={currentPage} totalPages={totalPages} handleClick={handleClick} />
-        </section>
-    )
+    if (totalPages) {
+        return (
+            <section>
+                <Pagination arrPages={arrPages} currentPage={currentPage} totalPages={totalPages} handleClick={handleClick} />
+                <Cards showGames={showGames} />
+                <Pagination arrPages={arrPages} currentPage={currentPage} totalPages={totalPages} handleClick={handleClick} />
+            </section>
+        )
+    } else {
+        return (
+            <WithoutCards />
+        )
+    }
 }
 
 export default Pages

@@ -1,17 +1,17 @@
 .body {
     display: flex;
     flex-flow: wrap row;
+    background-color: #000000;
 }
 
 .bar {
-    background-color: crimson;
     width: 100%;
     display: flex;
     flex-flow: wrap row;
-    justify-content: center;
-    gap: 50px;
+    justify-content: space-evenly;
+    margin: 20px;
 }
 
 .viewCards {
-    background-color: dodgerblue;
+    background-color: transparent;
 }

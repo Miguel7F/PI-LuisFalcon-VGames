@@ -17,6 +17,7 @@ function SearchBar() {
         id='nameGame'
         value={nameGame}
         onChange={handleChange}
+        className={styles.input}
         placeholder='Find your game' />
     </div>
   )

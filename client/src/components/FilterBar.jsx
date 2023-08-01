@@ -16,20 +16,14 @@ function FilterBar() {
 
     return (
         <section className={styles.container}>
-            <span>Filter by:</span><br />
-            <span>Source: </span> <br />
-
-            <select name="source" onChange={handleChange} value={source} >
-                <option value="All">All</option>
-                <option value="Data Base">Data Base</option>
-                <option value="API RAWG">API RAWG</option>
+            <select name="source" onChange={handleChange} value={source} className={styles.select} >
+                <option value="All">Get from All Sources</option>
+                <option value="Data Base">Get from Data Base</option>
+                <option value="API RAWG">Get from API RAWG</option>
             </select>
 
-            <br />
-            <span>Genre: </span><br />
-
-            <select name="genre" onChange={handleChange} value={genre} >
-                <option value="All">All</option>
+            <select name="genre" onChange={handleChange} value={genre} className={styles.select}>
+                <option value="All">Show all Genres</option>
                 <AllOption options={genres}/>
             </select>
         </section>

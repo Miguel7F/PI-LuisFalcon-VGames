@@ -14,31 +14,22 @@ function SortBar() {
 
     return (
         <div className={styles.container}>
-            <span >Sort by:</span><br />
-
-            <label>
-                <input type="radio"
-                    key='rating'
-                    name='type'
-                    value='rating'
-                    onChange={handleChange}
-                    defaultChecked = {type==='rating'}/>Rating</label>
-
-            <label>
-                <input type="radio"
-                    key='name'
-                    name='type'
-                    onChange={handleChange}
-                    value='name'
-                    defaultChecked = {type==='name'} />Name</label>
+            <select name="type"
+                key="type"
+                onChange={handleChange}
+                defaultValue={type}
+                className={styles.select}>
+                <option value="rating">Sort by Rating</option>
+                <option value="name">Sort by Name</option>
+            </select>
 
             <select name="direction"
                 key="direction"
                 onChange={handleChange}
-                defaultValue={direction}>
-
-                <option value="up">Ascending 🔺</option>
-                <option value="down">Descending 🔻</option>
+                defaultValue={direction}
+                className={styles.select}>
+                <option value="up">🔺Ascending</option>
+                <option value="down">🔻Descending</option>
             </select>
         </div>
     )

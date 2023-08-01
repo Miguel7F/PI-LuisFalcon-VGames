@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    text-align: center;
+}
+
+.text {
+    width: 100%;
+    height: auto;
+    color: yellow;
+    font-family: 'Press Start 2P', cursive;
+    font-size: xx-large;
+}
+
+.imagen {
+    width: 60%;
+    height: auto;
+}

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-flow: wrap row;
+    align-items: center;
+}
+
+.input {
+    background-color: transparent;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.input:focus {
+    box-shadow: 2px 2px 15px #FD3084 inset;
+    color: #ffffff;
+    outline-color: rgb(255, 100, 163);
+    transition: .1s;
+    transition-property: box-shadow;
+}

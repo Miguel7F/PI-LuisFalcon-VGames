@@ -6,9 +6,7 @@ const { Genre } = require('../config/db')
 function saveGenre() {
     axios.get(`${URL_API}genres?key=${API_KEY}`)
         .then(({ data }) => {
-            data.results.forEach(({ id, name }) => {
-                Genre.create({ id, name })
-            });
+            Genre.bulkCreate(data.results)
         })
         .catch((error) => {
             throw Error(error)

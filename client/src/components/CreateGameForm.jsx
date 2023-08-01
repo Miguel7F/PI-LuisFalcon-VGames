@@ -6,6 +6,7 @@ import getGames from '../redux/actions/getGamesAction';
 import validation from '../services/validation';
 import AllOption from './AllOption';
 import ShowSelected from './ShowSelected';
+import postGame from '../redux/actions/postGameAction';
 
 function CreateGameForm() {
   const dispatch = useDispatch()
@@ -79,19 +80,24 @@ function CreateGameForm() {
     if (info[name].length === 0) setError({ ...error, [name]: 'You must select an option' })
     else setError({ ...error, [name]: 'ok' })
   }
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
 
     const createGame = {
-      game: {
-        name: info.nameGame,
-        description: info.description,
-        platforms: [],
-        background_image: info.image,
-        released: info.released,
-        rating: info.rating,
-        GenreId: []
-      }
+      name: info.nameGame,
+      description: info.description,
+      background_image: info.image,
+      released: info.released,
+      rating: info.rating,
+      PlatformId: info.platform.map(elememt => platforms?.find(({ name }) => name === elememt).id),
+      GenreId: info.genre.map(elememt => genres?.find(({ name }) => name === elememt).id)
+    }
+
+    try {
+      await postGame(createGame)
+      dispatch(getGames())
+    } catch (error) {
+      alert(error.message)
     }
   }
 

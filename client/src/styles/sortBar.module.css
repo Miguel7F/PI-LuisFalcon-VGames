@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+}
+
+.select {
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 145px;
+    height: 20px;
+    text-align: right;
+    border-right: 6px solid #FD3084;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.select option {
+    background-color: #1a1a1a;
+    color: white;
+}
