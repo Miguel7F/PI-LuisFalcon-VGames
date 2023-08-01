@@ -13,6 +13,7 @@
     text-decoration: none;
     margin: 20px;
     padding: 5px;
+    text-align: center;
 }
 
 .card::before {
@@ -42,11 +43,11 @@
 }
 
 .card:hover {
-    filter: drop-shadow(0px 0px 10px rgba(209, 38, 197, 1));
+    filter: drop-shadow(0px 0px 10px rgba(253, 48, 132, 1));
 }
 
 .card:hover::before {
-    transform: rotate(-90deg) scaleX(1.25) scaleY(0.80);
+    transform: rotate(-90deg) scaleX(1.24) scaleY(0.81);
 }
 .text, .card:visited{
     color: #fff;

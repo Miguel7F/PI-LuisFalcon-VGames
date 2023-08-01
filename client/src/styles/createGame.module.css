@@ -1,33 +1,8 @@
 .container {
+
     display: flex;
     flex-flow: wrap row;
     justify-content: space-around;
     align-items: center;
-    height: 80vh;
-}
-
-.getData {
-    display: flex;
-    flex-flow: wrap column;
-    align-items: center;
-    flex: 1;
-}
-
-
-
-.getData label, strong {
-    color: red;
-}
-
-.viewData {
-    display: flex;
-    flex-flow: wrap column;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-}
-
-.viewData img {
-    width: 500px;
-    height: 300px;
+    height: 90vh;
 }

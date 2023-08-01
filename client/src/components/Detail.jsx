@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import getGameDetail from '../services/getGameDetail';
 import DetailCard from './DetailCard';
 
-
 function Detail() {
   const id = useParams().id
   const [detail, setDetail] = useState({
@@ -22,7 +21,15 @@ function Detail() {
   }, [])
 
   return (
-    <DetailCard id={detail.id} name={detail.name} background_image={detail.background_image} platformsName={detail.platformsName} description={detail.description} released={detail.released} rating={detail.rating} genresName={detail.genresName} />
+    <DetailCard id={detail.id}
+      name={detail.name}
+      background_image={detail.background_image}
+      platformsName={detail.platformsName}
+      description={detail.description}
+      released={detail.released}
+      rating={detail.rating}
+      genresName={detail.genresName}
+    />
   )
 }
 export default Detail

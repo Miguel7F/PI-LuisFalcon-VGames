@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-flow: wrap row;
+    align-items: center;
+}
+
+.container button{
+    font-weight: 400;
+    font-size: 11px;
+}
+
+.button{
+    background-color: transparent;
+    color: #FEB1DE;
+    border: none;
+}

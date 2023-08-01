@@ -1,0 +1,130 @@
+  .getData {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+    height: 100%;
+  }
+
+  .getData h2 {
+    letter-spacing: 0.01em;
+    font-family: 'Press Start 2P', cursive;
+    color: #FD3084;
+    text-align: center;
+  }
+
+  .fields {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+  }
+
+  .fields input,
+  textarea {
+    background-color: transparent;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+
+  .fields textarea:focus,
+  input:focus {
+    box-shadow: 2px 2px 15px #FD3084 inset;
+    color: #ffffff;
+    outline-color: rgb(255, 100, 163);
+    transition: .1s;
+    transition-property: box-shadow;
+  }
+
+  .fields select {
+    background-color: transparent;
+    border: none;
+    color: #FD3084;
+    text-align: center;
+    border-bottom: 1px solid #FD3084;
+    border-right: 6px solid #FD3084;
+    border-left: 6px solid #FD3084;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .fields select::selection {
+    border:none;
+  }
+
+  .fields select:disabled {
+    color: rgba(0, 0, 0, 0.568);
+    background-color: rgba(255, 255, 255, 0.624)
+  }
+
+  .fields option {
+    background-color: #1a1a1a;
+    color: white;
+  }
+
+  .fields small,
+  input,
+  textarea,
+  select {
+    width: 300px;
+    height: 22px;
+  }
+
+  .fields small {
+    text-align: end;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .optionSelected {
+    display: flex;
+    flex-flow: wrap row;
+    align-items: center;
+  }
+
+  .getData label,
+  strong,
+  small {
+    color: red;
+  }
+
+  
+.button {
+  padding: 4px 8px 4px 8px;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 12px;
+  margin: 10px;
+  color: #fff6fb;
+  text-shadow: -2px 2px 5px #FD3084;
+  background-color: transparent;
+  border: 2px solid #FEB1DE;
+  box-shadow: 0 0 0px 1px #F11271,
+      0 0 10px 2px #FD3084,
+      inset 0 0 0px 1px #F11271,
+      inset 0 0 10px 2px #FD3084;
+  transition: 100ms;
+  text-decoration: none;
+}
+
+.button:hover {
+  box-shadow: 0 0 0px 1px #F11271,
+      0 0 10px 2px #FD3084,
+      inset 0 0 0px 1px #F11271,
+      inset 0 0 30px 2px #FD3084;
+  text-shadow: 0 0 10px #FD3084;
+  transform: translateY(-5px);
+}
+
+.button:active {
+  box-shadow: 0 0 0px 1px #F11271,
+      0 0 25px 2px #FD3084,
+      inset 0 0 0px 1px #F11271,
+      inset 0 0 30px 2px #FD3084;
+  transform: translateY(1px);
+}
