@@ -7,13 +7,14 @@ import Pages from './Pages'
 import SearchBar from './SearchBar';
 import SortBar from './SortBar';
 import FilterBar from './FilterBar';
+import Loading from './Loading';
 
 function Home() {
-  console.log('ingresa a home');
+
   const dispatch = useDispatch()
   const genres = useSelector(state => state.genres)
   const games = useSelector(state => state.games)
-  
+
   useEffect(() => {
     try {
       !genres.length && dispatch(getGenres())
@@ -23,18 +24,24 @@ function Home() {
     }
   }, [])
 
-  return (
-    <section className={styles.body}>
-      <div className={styles.bar}>
-        <FilterBar />
-        <SearchBar />
-        <SortBar />
-      </div>
-      <div className={styles.viewCards}>
-        <Pages/>
-      </div>
-    </section>
-  )
+  if (games.length) {
+    return (
+      <section className={styles.body}>
+        <div className={styles.bar}>
+          <FilterBar />
+          <SearchBar />
+          <SortBar />
+        </div>
+        <div className={styles.viewCards}>
+          <Pages />
+        </div>
+      </section>
+    )
+  } else {
+    return (<Loading />)
+
+  }
+
 }
 
 export default Home

@@ -7,8 +7,8 @@ function FilterBar() {
     const dispatch = useDispatch()
     const genres = useSelector(state => state.genres)
     const genre = useSelector(state => state.genre)
-    const source = useSelector(state=>state.source)
-    
+    const source = useSelector(state => state.source)
+
     function handleChange(event) {
         const { name, value } = event.target
         dispatch(changeBar({ name, value }))
@@ -21,10 +21,9 @@ function FilterBar() {
                 <option value="Data Base">Get from Data Base</option>
                 <option value="API RAWG">Get from API RAWG</option>
             </select>
-
             <select name="genre" onChange={handleChange} value={genre} className={styles.select}>
                 <option value="All">Show all Genres</option>
-                <AllOption options={genres}/>
+                <AllOption options={genres} />
             </select>
         </section>
     )

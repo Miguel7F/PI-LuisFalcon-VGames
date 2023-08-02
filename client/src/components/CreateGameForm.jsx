@@ -97,6 +97,27 @@ function CreateGameForm() {
     try {
       await postGame(createGame)
       dispatch(getGames())
+
+      setInfo({
+        nameGame: '',
+        image: '',
+        description: '',
+        released: '',
+        rating: '',
+        platform: [],
+        genre: [],
+      })
+
+      setError({
+        nameGame: '',
+        image: '',
+        description: '',
+        released: '',
+        rating: '',
+        platform: '',
+        genre: '',
+      })
+
     } catch (error) {
       alert(error.message)
     }
@@ -105,19 +126,19 @@ function CreateGameForm() {
   return (
     <div className={styles.container}>
       <FormContainer
-      info={info}
-      error={error}
-      arrRatings={arrRatings}
-      disabledSubmit={disabledSubmit}
-      filterPlatforms={filterPlatforms}
-      filterGenres={filterGenres}
-      handleChange={handleChange}
-      handleSelectChange={handleSelectChange}
-      handleClick={handleClick}
-      handleBlur={handleBlur}
-      handleSubmit={handleSubmit}
+        info={info}
+        error={error}
+        arrRatings={arrRatings}
+        disabledSubmit={disabledSubmit}
+        filterPlatforms={filterPlatforms}
+        filterGenres={filterGenres}
+        handleChange={handleChange}
+        handleSelectChange={handleSelectChange}
+        handleClick={handleClick}
+        handleBlur={handleBlur}
+        handleSubmit={handleSubmit}
       />
-      <ViewCreate info={info}/>
+      <ViewCreate info={info} />
     </div >
   )
 }

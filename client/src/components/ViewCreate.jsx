@@ -9,8 +9,8 @@ function ViewCreate({ info }) {
             <div>{info.description ? info.description : "You haven't posted a video game description yet"}</div>
             <div>{info.released ? info.released : "You haven't set a video game release date yet."}</div>
             <div>{info.rating ? info.rating : "You have not placed a rating yet."}</div>
-            <div>{info.platform.length ? info.platform : "You haven't chosen a platform yet."}</div>
-            <div>{info.genre.length ? info.genre : "You haven't chosen a genre yet."}</div>
+            <div>{info.platform.length ? info.platform.join(", ") : "You haven't chosen a platform yet."}</div>
+            <div>{info.genre.length ? info.genre.join(", ") : "You haven't chosen a genre yet."}</div>
         </section>
     )
 }

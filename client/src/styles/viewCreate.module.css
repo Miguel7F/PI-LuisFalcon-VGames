@@ -1,14 +1,22 @@
-
 .viewData {
-    background-color: cyan;
     display: flex;
     flex-flow: wrap column;
     flex: 1;
     justify-content: center;
     align-items: center;
+    color: aliceblue;
+    border: 1px solid #40c9ff;
+}
+
+.viewData h2 {
+    letter-spacing: 0.01em;
+    font-family: 'Press Start 2P', cursive;
+    color: #40c9ff;
+    text-align: center;
 }
 
 .viewData img {
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: auto;
+    min-height: 200px;
 }

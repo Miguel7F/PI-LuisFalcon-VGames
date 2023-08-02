@@ -10,7 +10,7 @@
   .getData h2 {
     letter-spacing: 0.01em;
     font-family: 'Press Start 2P', cursive;
-    color: #FD3084;
+    color: #40c9ff;
     text-align: center;
   }
 
@@ -24,7 +24,6 @@
   textarea {
     background-color: transparent;
     text-align: center;
-    border: 2px solid white;
     border-radius: 5px;
     color: #ffffff;
   }
@@ -41,11 +40,11 @@
   .fields select {
     background-color: transparent;
     border: none;
-    color: #FD3084;
+    color: #40c9ff;
     text-align: center;
-    border-bottom: 1px solid #FD3084;
-    border-right: 6px solid #FD3084;
-    border-left: 6px solid #FD3084;
+    border-bottom: 1px solid #40c9ff;
+    border-right: 6px solid #40c9ff;
+    border-left: 6px solid #40c9ff;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -92,8 +91,19 @@
     color: red;
   }
 
+.button:disabled{
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: #000000a3;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
   
-.button {
+
+.button:enabled {
   padding: 4px 8px 4px 8px;
   font-size: 14px;
   letter-spacing: 0.01em;
@@ -112,16 +122,16 @@
   text-decoration: none;
 }
 
-.button:hover {
+.button:hover:enabled {
   box-shadow: 0 0 0px 1px #F11271,
       0 0 10px 2px #FD3084,
       inset 0 0 0px 1px #F11271,
       inset 0 0 30px 2px #FD3084;
   text-shadow: 0 0 10px #FD3084;
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
-.button:active {
+.button:active:enabled {
   box-shadow: 0 0 0px 1px #F11271,
       0 0 25px 2px #FD3084,
       inset 0 0 0px 1px #F11271,

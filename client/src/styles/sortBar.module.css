@@ -1,15 +1,16 @@
 .container {
     display: flex;
     flex-flow: wrap row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex: 1;
 }
 
 .select {
     background-color: transparent;
     border: none;
     color: white;
-    width: 150px;
+    width: auto;
     height: 20px;
     text-align: right;
     border-right: 6px solid #FD3084;

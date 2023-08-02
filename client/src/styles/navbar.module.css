@@ -1,11 +1,12 @@
 .container {
-    width: 100%;
+    width: 95vw;
     display: flex;
     flex-flow: wrap row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: #000000;
     position: sticky;
+    margin: 25px;
     top: 0;
     opacity: 0.9;
     z-index: 1;
@@ -36,7 +37,7 @@
         inset 0 0 0px 1px #F11271,
         inset 0 0 30px 2px #FD3084;
     text-shadow: 0 0 10px #FD3084;
-    transform: translateY(-5px);
+    transform: translateY(-2px);
 }
 
 .link:active {
