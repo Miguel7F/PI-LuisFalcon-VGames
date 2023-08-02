@@ -56,7 +56,7 @@ function CreateGameForm() {
 
   function handleChange(event) {
     const { name, value } = event.target
-    const answer = validation(name, value)
+    const answer = validation(name, value,games)
     setError({ ...error, [name]: answer })
     setInfo({ ...info, [name]: value.trimLeft() })
   }
@@ -97,7 +97,7 @@ function CreateGameForm() {
     try {
       await postGame(createGame)
       dispatch(getGames())
-
+      alert('The video game was successfully created')
       setInfo({
         nameGame: '',
         image: '',
@@ -117,9 +117,8 @@ function CreateGameForm() {
         platform: '',
         genre: '',
       })
-
     } catch (error) {
-      alert(error.message)
+      alert(error)
     }
   }
 

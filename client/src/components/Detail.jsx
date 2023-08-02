@@ -9,13 +9,13 @@ function Detail() {
   const [detail, setDetail] = useState({})
 
   useEffect(() => {
-    async function getDetail(id) {
-      setDetail(await getGameDetail(id))
-    }
+
     try {
-      getDetail(id)
+      (async function (id) {
+        setDetail(await getGameDetail(id))
+      })(id)
     } catch (error) {
-      alert(error.message)
+      alert(error.response.data)
     }
   }, [])
 

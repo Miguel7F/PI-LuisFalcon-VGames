@@ -2,11 +2,12 @@ const regexName = /^[a-zA-Z0-9_:'()\-\s]{2,60}$/;
 const regexUrl = /^(https?):\/\/[^\s/$.?#].[^\s]*$/;
 const regexDate = /^(198\d|199\d|200\d|201\d|202[0-3])-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\d|3[01])$/;
 //{ nameGame, image, description, plataforms, released, rating, genre }
-function validation(name, value) {
+function validation(name, value, games) {
     let answer = ''
     switch (name) {
         case 'nameGame':
-            if (value === "") answer = "This field can not be empty"
+            if (games.some(({ name }) => name.toLowerCase() === value.toLowerCase())) answer = "The videogame's name is already exists"
+            else if (value === "") answer = "This field can not be empty"
             else answer = regexName.test(value) ? "ok"
                 : "Length: 2 - 60. Only acepted A-Z, 0-9, : _ ' ( ) -"
             break;

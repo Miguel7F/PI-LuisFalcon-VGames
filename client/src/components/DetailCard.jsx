@@ -14,8 +14,8 @@ function DetailCard({ id, name, background_image, platformsName, description, re
                         <div>Released: {released}</div>
                         <div>Average Rating: {rating}</div>
                         <div>Genres: {genresName?.join(", ")}</div>
-                        <span>Description:
-                        <label dangerouslySetInnerHTML={{ __html: description }} /></span>
+                        <span>{'Description: '}
+                            <label dangerouslySetInnerHTML={{ __html: description }} /></span>
                     </div>
                 </div>
             </div>
