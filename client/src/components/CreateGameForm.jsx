@@ -7,6 +7,7 @@ import validation from '../services/validation';
 import postGame from '../redux/actions/postGameAction';
 import ViewCreate from './ViewCreate';
 import FormContainer from './FormContainer';
+import notFoundImage from '../assets/ImageNotFound.svg'
 
 function CreateGameForm() {
   const dispatch = useDispatch()
@@ -137,7 +138,7 @@ function CreateGameForm() {
         handleBlur={handleBlur}
         handleSubmit={handleSubmit}
       />
-      <ViewCreate info={info} />
+      <ViewCreate info={info} notFoundImage={notFoundImage} />
     </div >
   )
 }

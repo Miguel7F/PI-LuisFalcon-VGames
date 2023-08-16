@@ -10,6 +10,7 @@ function Pages() {
     const totalPages = Math.ceil(modificated.length / PAGE_SIZE)
     const arrPages = Array.from({ length: totalPages }, (_, i) => i + 1)
 
+    console.log(modificated);
     const [currentPage, setCurrentPage] = useState(1)
     const showGames = modificated.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
 

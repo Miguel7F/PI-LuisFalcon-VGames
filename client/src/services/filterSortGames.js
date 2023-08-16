@@ -1,5 +1,6 @@
 
 function filterSortGames(state) {
+    
     const { games, genre, direction, type, source, nameGame } = state
 
     //Filtrando por origen (API o DATABASE)
